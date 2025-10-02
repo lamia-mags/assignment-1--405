@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Contact Form Styling */
+    .contact-section {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 15px;
+    }
+
+    .contact-section label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .contact-section input, 
+    .contact-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Radio buttons aligned horizontally */
+    .radio-group {
+      display: flex;
+      gap: 30px; /* space between options */
+      margin-top: 10px;
+    }
+
+    .radio-item {
+      display: flex;
+      align-items: center; /* vertically centers circle with text */
+      gap: 5px; /* space between circle and text */
+    }
+
+    .radio-item input[type="radio"] {
+      vertical-align: middle; /* ensures circle aligns with text */
+      transform: scale(1.2); /* slightly bigger circle */
+    }
+
+    .submit-button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: pink;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: hotpink;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Class Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align:center; margin-top:30px;">Contact Me</h1>
+
+    <section class="contact-section">
+      <!-- Replace with your Webhook link -->
+      <form action="https://webhook.site/91d544d3-f96f-490a-8767-416777ac2b85" method="POST">
+        <label for="name">Name <span style="color:red;">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email">
+
+        <label for="message">Message <span style="color:red;">*</span></label>
+        <textarea id="message" name="message" rows="10" required placeholder="Write your message..."></textarea>
+
+        <label>Message Type <span style="color:red;">*</span></label>
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="msgType" value="Inquiry" required>
+            Inquiry
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="msgType" value="Complaint" required>
+            Complaint
+          </label>
+        </div>
+
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
+
+
